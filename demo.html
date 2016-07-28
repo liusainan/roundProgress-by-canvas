@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>roundProgress</title>
+    <script type="text/javascript" src="roundProgress.js"></script>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+<canvas id="Icanvas" width="200" height="200"></canvas>
+</body>
+<script type="text/javascript">
+    var Iprogress = new roundProgress(document.getElementById('Icanvas'), '#eaedf3', '#6bd4e0');
+    Iprogress.init(1000, 60*1000);
+
+    var Iprogress1 = new roundProgress(document.getElementById('canvas'), '#eaedf3', '#f69a2e');
+    Iprogress1.init(1000, 60*1000);
+</script>
+</html>
