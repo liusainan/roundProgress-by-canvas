@@ -1,0 +1,197 @@
+body,html{
+    width: 100%;
+    min-height: 100%;
+    font-size: 20px;
+    height: auto;
+    max-height: auto;
+}
+canvas{
+    width: 160px;
+    height: 160px;
+}
+.recordBox{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
+}
+.circleProgress_wrapper{
+    width: 160px;
+    height: 160px;
+    margin: 5% auto;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px rgba(107,212,224,0.3);
+    background: -webkit-radial-gradient(circle at center,rgba(255,255,255,0.3), rgba(107,212,224,0.1));
+    background: radial-gradient(circle at center, rgba(255,255,255,0.3),rgba(107,212,224,0.1));
+}
+.circleProgress_wrapper.blue{
+    background:rgba(107,212,224,1);
+    width: 136px;
+    height: 136px;
+    top: 12px;
+    transform: scale(1);
+    transition: all 0.2s;
+    -webkit-transform: scale(1);
+    z-index: 1;
+}
+.circleProgress_wrapper.blue.hide{
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+.circleProgress_wrapper.blue:after{
+    content: "";
+    background: url(start.png) no-repeat center center;
+    background-size: 36px auto;
+    width: 60px;
+    height: 122px;
+    display: inline-block;
+    position: relative;
+    left: 38px;
+    top: 7px;
+}
+.circleProgress_wrapper.gray{
+    background: none;
+    box-shadow: none;
+    transform: scale(0);
+    transition: all 0.2s;
+    -webkit-transform: scale(0);
+    z-index: 0;
+}
+.circleProgress_wrapper.gray[status="active"]{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+}
+.wrapper{
+    width: 80px;
+    height: 160px;
+    position: absolute;
+    top:0;
+    overflow: hidden;
+}
+.right{
+    right:0;
+}
+.left{
+    left:0;
+}
+.circleProgress{
+    height: 144px;
+    width: 144px;
+    border:8px solid rgba(107,212,224,1);
+    border-radius: 50%;
+    position: absolute;
+    top:0;
+    -webkit-transform: rotate(45deg);
+}
+.circleProgress.blue{
+    -webkit-animation:none;
+    border:8px solid rgba(107,212,224,1);
+}
+.rightcircle{
+    border-top:8px solid #EAEDF3;
+    border-right:8px solid #EAEDF3;
+    right:0;
+    -webkit-animation: circleProgressLoad_right 60s linear alternate both;
+}
+.leftcircle{
+    border-bottom:8px solid #EAEDF3;
+    border-left:8px solid #EAEDF3;
+    left:0;
+    -webkit-animation: circleProgressLoad_left 60s linear alternate both;
+}
+.timeNow{
+    color: rgba(107, 212, 224, 1);
+    width: 50px;
+    text-align: center;
+    position: relative;
+    top: 60px;
+    left: 60px;
+    height: 50px;
+    z-index: 2;
+}
+.circleProgress.gray{
+    -webkit-animation:none;
+    border:8px solid #EAEDF3;
+}
+.circleSmall{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background:rgba(107,212,224,1);
+    top: 50%;
+    left: 50px;
+    text-align: center;
+    color: #fff;
+    line-height: 60px;
+    font-size: 0.8rem;
+    box-shadow: 0px 0px 15px rgba(107,212,224,0.7);
+    margin-top: -30px;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    transition: all 0.2s;
+}
+.circleSmall.show{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+}
+.circleSmall i{
+    display: inline-block;
+    width:0;
+    height:0;
+    border-top:10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #fff;
+    position: relative;
+    top: 4px;
+    left: 3px;
+}
+.circleSmall i.lIng{
+    top: 20px;
+    width: 5px;
+    height: 20px;
+    background: #fff;
+    display: inline-block;
+    border: none;
+    left: -5px;
+    border-radius: 2px;
+}
+.circleSmall i.lIng:after{
+    width: 5px;
+    height: 20px;
+    border-radius: 2px;
+    background: #fff;
+    display: inline-block;
+    border: none;
+    content: "";
+    left: 10px;
+    top: -16px;
+    position: relative;
+}
+.circleSmall.left{
+    position: absolute;
+    left: 3%;
+    color: rgba(107,212,224,1);
+    background: #EAEDF3;
+    box-shadow: 0px 0px 15px #EAEDF3;
+}
+.circleSmall.right{
+    position: absolute;
+    right: 3%;
+    left: inherit;
+}
+@media only screen and (min-width: 374px) and (max-width: 415px) {
+    .circleSmall.right{
+        right: 6%;
+    }
+    .circleSmall.left{
+        left: 6%;
+    }
+}
+.circleBig{
+    width: 100%;
+    position: absolute;
+    top: 0;
+}

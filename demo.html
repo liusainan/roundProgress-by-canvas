@@ -1,19 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <title>roundProgress</title>
+    <link rel="stylesheet" type="text/css" href="record.css">
+    <script type="text/javascript" src="http://zeptojs.com/zepto.min.js"></script>
     <script type="text/javascript" src="roundProgress.js"></script>
+    <script type="text/javascript" src="record.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        var js_sdk_config = {
+            "timestamp": "1470191524",
+            "nonceStr": "nonce",
+            "signature": "e8a10edf086f13a0261b9ad353e3ddd3b5197764",
+            "appId": "wx779349bc5fe8ba08"
+        };
+    </script>
+    <script type="text/javascript" src="http://assets.dajieimg.com/up/dj-mobile/caipital_club/js/common/weixin.61118.js"></script>
 </head>
 <body>
-<canvas id="canvas" width="150" height="150"></canvas>
-<canvas id="Icanvas" width="200" height="200"></canvas>
+<div class="recordBox">
+    <!--初始-->
+    <div id="jp-start" class="circleProgress_wrapper blue">
+        <div class="wrapper right blue">
+            <div class="circleProgress rightcircle blue"></div>
+        </div>
+        <div class="wrapper left blue">
+            <div class="circleProgress leftcircle blue"></div>
+        </div>
+    </div>
+    <!--录音停止-->
+    <div class="circleBig">
+        <p class="circleSmall left"></p>
+        <div class="circleProgress_wrapper gray">
+            <canvas id="canvas" width="160" height="160"></canvas>
+            <p class="circleSmall middle"><i class=""></i></p>
+        </div>
+        <p class="circleSmall right">重录</p>
+    </div>
+</div>
 </body>
-<script type="text/javascript">
-    var Iprogress = new roundProgress(document.getElementById('Icanvas'), '#eaedf3', '#6bd4e0');
-    Iprogress.init(1000, 60*1000);
-
-    var Iprogress1 = new roundProgress(document.getElementById('canvas'), '#eaedf3', '#f69a2e');
-    Iprogress1.init(1000, 60*1000);
-</script>
 </html>
